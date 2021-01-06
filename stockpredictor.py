@@ -10,6 +10,7 @@ from PIL import Image
 import math
 from sklearn.metrics import mean_squared_error
 
+
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -139,8 +140,8 @@ def run_app():
 
         #print(lst_output)
 
-        previous_days = np.arange(1, n_steps + 1)
-        predicted_future = np.arange(n_steps + 1, future_day + n_steps + 1)
+        previous_days = np.arange(len(df1) - n_steps, len(df1))
+        predicted_future = np.arange(len(df1), len(df1) + future_day)
 
 
 
@@ -164,7 +165,7 @@ def run_app():
             plt.title("Combined graph with forecasted price")
             plt.xlabel("Future Days")
             plt.ylabel("Closing Price")
-            plt.plot(scaler.inverse_transform(outputlist[len(df1) - n_steps - 1:]))
+            plt.plot(np.append(previous_days, predicted_future),scaler.inverse_transform(outputlist[len(df1) - n_steps:]))
             plt.plot(predicted_future, scaler.inverse_transform(lst_output))
             st.pyplot(fig1)
 
