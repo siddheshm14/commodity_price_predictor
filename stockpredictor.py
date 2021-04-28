@@ -23,7 +23,7 @@ def run_app():
     #file_uploader=st.file_uploader("Upload NCDEX stock market file for prediction",type=["csv"])
     st.sidebar.info("This application focuses on forecasting closing price of commodities by using Long  Short term memory Model")
 
-    st.sidebar.info("Application is developed to forecast multiple Commodity closing Price")
+    st.sidebar.info("Application is developed by Siddhesh D. Munagekar to forecast multiple Commodity closing Price")
     #if file_uploader is not None:
 
     ####Uploading NCEX Commodity exchange Dataset#############
