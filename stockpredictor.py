@@ -93,8 +93,8 @@ def run_app():
         #Calculating Mean squared error
     train_mse=math.sqrt(mean_squared_error(y_train, train_predict))
     test_mse=math.sqrt(mean_squared_error(y_test, test_predict))
-    st.write("Test mean squared Error",test_mse)
-    st.write("Train mean squared Error",train_mse)
+    st.write("Test mean squared Error",round(test_mse,2))
+    st.write("Train mean squared Error",round(train_mse,2))
 
         #Considering last 10 days output
     x_input = test_set[(len(test_set) - time_step):].reshape(1, -1)
